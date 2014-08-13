@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :assignments
-
+  root 'welcome#homepage'
   get 'welcome/homepage'
 
   # The priority is based upon order of creation: first created -> highest priority.

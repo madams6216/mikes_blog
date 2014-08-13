@@ -1,31 +1,17 @@
-<h1>Listing assignments</h1>
+<div class="container">
+<% @assignments.each do |assignment| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Problem</th>
-      <th>Solution</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2><%= assignment.title %><small> By <%= assignment.author %></small></h2>
+<p><em><%= l(assignment.created_at, :format => :default) %></em></p>
+<h4>Problem</h4>
+  <p><%= assignment.problem %></p>
+<h4>Solution</h4>
+  <p><%= assignment.solution %></p>
+<p><%= link_to 'Show', assignment %> | <%= link_to 'Edit', edit_assignment_path(assignment) %> | <%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
-  <tbody>
-    <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.author %></td>
-        <td><%= assignment.problem %></td>
-        <td><%= assignment.solution %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% end %>
 
 <br>
 
 <%= link_to 'New Assignment', new_assignment_path %>
+</div>

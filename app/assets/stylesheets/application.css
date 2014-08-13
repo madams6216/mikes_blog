@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+*Added style to body
+*Changed background color
+*Added padding to top to compensate for fixed navbar
+*/
+body {
+  background-color:#7333C1;
+  padding-top:50px;
+}
+
+/*Added white background behind blog posts*/
+#white-bg {
+	background: #FFF;
+	margin-top: 20px;
+}
